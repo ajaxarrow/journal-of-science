@@ -8,6 +8,7 @@
 			<p class="mt-4 sm:text-xl/relaxed">
 				This is my home page
 			</p>
+			<p class="text-title">Hi</p>
 		</div>
 	</div>
 </section>

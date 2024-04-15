@@ -1,9 +1,10 @@
 <html>
 <head>
 	<title>CMU Journal of Science</title>
-<!--	<link rel = "stylesheet" type = "text/css" href = "--><?php //echo base_url(); ?><!--public/assets/style.css">-->
+	<link rel = "stylesheet" type = "text/css" href = "<?php echo base_url(); ?>public/styles/main.css">
 	<script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+	<script src="https://unpkg.com/@phosphor-icons/web"></script>
 	<script src="https://cdn.tailwindcss.com"></script>
-<!--	<script src="https://cdn.tailwindcss.com"></script>-->
+	<script src="https://unpkg.com/@phosphor-icons/web"></script>
 </head>
 <body>
