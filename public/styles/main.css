@@ -2,5 +2,58 @@
 
 *{
 	font-family: 'Satoshi', sans-serif;
+	background-color: var(--bg);
 }
 
+/* global */
+.btn-round-filled{
+	padding: 5px 10px;
+	background-color: var(--green8);
+	color: var(--gs100);
+
+}
+
+.btn-round-outlined{
+	border: 3px solid var(--green8);
+	color: var(--green8);
+}
+
+.btn-round-filled, .btn-round-outlined{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	border-radius: 25px;
+}
+
+/* Landing Page */
+
+.landing-navbar{
+	height: 80px;
+	display: flex;
+	align-items: center;
+	padding: 16px;
+}
+
+.nav-column{
+	width: 33.33%;
+}
+
+.text-logo{
+	font-size: 25px;
+	font-weight: 900;
+	color: var(--green9);
+}
+
+.landing-nav-item{
+	color: var(--gs20);
+}
+
+.active-landing-nav-item{
+	color: var(--green10);
+	text-decoration: underline;
+}
+
+.landing-main{
+	padding-top: 80px;
+	margin: 0 36px;
+}

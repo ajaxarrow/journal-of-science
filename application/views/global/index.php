@@ -1,14 +1,2 @@
-<section class="bg-gray-50">
-	<div class="mx-auto max-w-screen-xl px-4 py-32 lg:flex lg:h-[90vh] lg:items-center">
-		<div class="mx-auto max-w-xl text-center">
-			<h1 class="text-3xl font-extrabold sm:text-5xl">
-				HOME
-			</h1>
-
-			<p class="mt-4 sm:text-xl/relaxed">
-				This is my home page
-			</p>
-			<p class="text-title">Hi</p>
-		</div>
-	</div>
-</section>
+<?php $this->load->view('./components/global/navbar.php'); ?>
+<main class="landing-main">hi</main>
