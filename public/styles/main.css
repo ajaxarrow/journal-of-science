@@ -2,28 +2,40 @@
 
 *{
 	font-family: 'Satoshi', sans-serif;
+}
+
+body{
 	background-color: var(--bg);
 }
 
 /* global */
-.btn-round-filled{
+.btn-round-filled, .btn-filled{
 	padding: 5px 10px;
 	background-color: var(--green8);
 	color: var(--gs100);
 
 }
 
+
 .btn-round-outlined{
 	border: 3px solid var(--green8);
 	color: var(--green8);
 }
 
-.btn-round-filled, .btn-round-outlined{
+.btn-round-filled, .btn-round-outlined, .btn-filled{
 	display: flex;
 	justify-content: center;
 	align-items: center;
+}
+
+.btn-round-filled, .btn-round-outlined{
 	border-radius: 25px;
 }
+
+.btn-filled{
+	border-radius: 15px;
+}
+
 
 /* Landing Page */
 
@@ -57,3 +69,109 @@
 	padding-top: 80px;
 	margin: 0 36px;
 }
+
+.hero-title{
+	font-size: 48px;
+	line-height: 46px;
+}
+
+.hero-subtitle{
+	color: #292727;
+	font-size: 20px;
+	font-weight: 300;
+	line-height: 22.5px;
+
+}
+
+.center{
+	height: 100%;
+	width: 100%;
+	display: grid;
+	place-items: center;
+}
+
+.register-sheet, .login-sheet {
+	border-radius: 20px;
+	background-color: var(--gs100);
+}
+
+.login-sheet{
+	width: 500px;
+}
+
+.register-sheet {
+	width: 633px;
+}
+
+@media screen and (max-width: 768px) {
+	.register-sheet, .login-sheet {
+	  width: 90%;
+	  max-width: 400px; 
+	}
+  }
+
+input {
+	padding-left: 15px !important;
+	width: 100%;
+	height: 45px;
+	border: solid 2px #e6e6e6;
+	border-radius: 10px;
+	transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+input:focus,
+input:active {
+	outline: 1px solid var(--green6);
+	border: 1px solid var(--green6);
+	border-color: #a0a0a0 !important; 
+	box-shadow: 0 0 5px var(--green8) !important; 
+}
+
+/* sidebar */
+.sidebar{
+	margin: 16px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 300px;
+    box-shadow: 0 0 7px 0 var(--border);
+    height: 95vh;
+	background-color: var(--gs100);
+	border-radius: 15px;
+}
+
+hr{
+	border-color: var(--border);
+}
+
+.nav-item{
+	border: 1px solid var(--green1);
+	border-radius: 15px;
+	height: 50px;
+	display: flex;
+	align-items: center;
+	padding-left: 15px;
+}
+
+.nav-item-active{
+	background-color: var(--green8);
+}
+
+.nav-text{
+	color: var(--green10);
+	display: flex;
+	align-items: center;
+	font-size: 14px;
+	font-weight: 400;
+}
+
+.nav-text-active, .nav-icon-active{
+	color: var(--bg) !important;
+}
+
+.nav-icon{
+	color: var(--gs40);
+}
+
+

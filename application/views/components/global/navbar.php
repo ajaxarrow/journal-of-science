@@ -1,6 +1,6 @@
 <section class="landing-navbar mx-5 fixed w-[97vw]">
 	<div class="nav-column ">
-	<a href="<?php echo base_url(); ?>" class="text-logo"><i class="ph ph-files ph-fill text-[28px]"></i>Journal of Sciences</a>
+	<a href="<?php echo base_url(); ?>" class="text-logo"><i class="ph ph-files ph-fill text-[28px]"></i>Journal of Science</a>
 	</div>
     <div  
 			x-data="{
@@ -16,7 +16,7 @@
     </div>
 
 	<div class="nav-column flex justify-end items-center">
-		<a class="btn-round-outlined h-[44px] w-[144px] mr-2">Login</a>
-		<a class="btn-round-filled h-[44px] w-[144px]">Register</a>
+		<a href="<?php echo base_url(); ?>auth/login" class="btn-round-outlined h-[44px] w-[144px] mr-2">Login</a>
+		<a href="<?php echo base_url(); ?>auth/register" class="btn-round-filled h-[44px] w-[144px]">Register</a>
 	</div>
 </section>
