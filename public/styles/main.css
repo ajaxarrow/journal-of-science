@@ -130,13 +130,13 @@ input:active {
 /* sidebar */
 .sidebar{
 	margin: 16px;
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    width: 300px;
-    box-shadow: 0 0 7px 0 var(--border);
-    height: 95vh;
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	width: 300px;
+	box-shadow: 0 2px 7px 0 var(--border);
+	height: 95vh;
 	background-color: var(--gs100);
 	border-radius: 15px;
 }
@@ -174,4 +174,33 @@ hr{
 	color: var(--gs40);
 }
 
+.topbar{
+	border-radius: 15px;
+	width: calc(100vw - 345px);
+	height: 70px;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	background-color: var(--gs100);
+	margin: 16px;
+	right: 0;
+	position: fixed;
+	box-shadow: 0 2px 7px 0 var(--border);
+}
 
+.avatar{
+	height: 45px;
+	width: 45px;
+	border-radius: 50%;;
+}
+
+.main-content-container{
+	background-color: var(--gs100);
+	width: calc(100vw - 345px);
+	min-height: 610px;
+	right: 0;
+	position: fixed;
+	box-shadow: 0 2px 7px 0 var(--border);
+	border-radius: 15px;
+	margin: 95px 16px 16px 16px;
+}
