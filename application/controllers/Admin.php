@@ -10,6 +10,13 @@ class Admin extends CI_Controller {
 		$this->load->view('templates/footer');
 	}
 
+	public function users()
+	{
+		$this->load->view('templates/header');
+		$this->load->view('admin/users');
+		$this->load->view('templates/footer');
+	}
+
 
 }
 

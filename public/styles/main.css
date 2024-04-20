@@ -22,7 +22,7 @@ body{
 	color: var(--green8);
 }
 
-.btn-round-filled, .btn-round-outlined, .btn-filled{
+.btn-round-filled, .btn-round-outlined, .btn-filled, .read-more-btn{
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -44,6 +44,11 @@ body{
 	display: flex;
 	align-items: center;
 	padding: 16px;
+	backdrop-filter: blur(20px) !important;
+}
+
+.landin-main{
+	margin-top: 90px;
 }
 
 .nav-column{
@@ -199,8 +204,22 @@ hr{
 	width: calc(100vw - 345px);
 	min-height: 610px;
 	right: 0;
-	position: fixed;
+	position: absolute;
 	box-shadow: 0 2px 7px 0 var(--border);
 	border-radius: 15px;
 	margin: 95px 16px 16px 16px;
+}
+
+
+.articles-card{
+	border-radius: 15px;
+	background-color: white;
+	width: 100%;
+	padding: 16px;
+}
+
+.read-more-btn{
+	background-color: var(--green5);
+	color: var(--gs100);
+	border-radius: 25px;
 }
