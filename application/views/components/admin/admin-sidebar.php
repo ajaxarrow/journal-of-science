@@ -16,11 +16,11 @@ $navItems = [
 		'link' => 'admin/articles',
 		'icon' => 'ph-file-text',
 	],
-	[
-		'name' => 'Manage Submissions',
-		'link' => 'admin/submissions',
-		'icon' => 'ph-pencil-simple-line',
-	],
+	// [
+	// 	'name' => 'Manage Submissions',
+	// 	'link' => 'admin/submissions',
+	// 	'icon' => 'ph-pencil-simple-line',
+	// ],
 	[
 		'name' => 'Manage Authors',
 		'link' => 'admin/authors',

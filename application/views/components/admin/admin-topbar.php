@@ -1,6 +1,6 @@
 <div class="topbar px-5">
 	<div class="flex items-center">
-		<i class="ph ph-bold ph-list text-[24px] mr-1"></i>
+		<i class="ph ph-bold ph-list text-[24px] mr-2"></i>
 		<p class="font-bold text-lg">
 		<?php echo isset($title) ? $title : 'Default Title'; ?>
 		</p>
