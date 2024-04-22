@@ -1,3 +1,4 @@
+<div class="blur"></div>
 <div class="topbar px-5">
 	<div class="flex items-center">
 		<i class="ph ph-bold ph-list text-[24px] mr-2"></i>
