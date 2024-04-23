@@ -1,7 +1,20 @@
 <?php
 class Volume_model extends CI_Model{
 
-	public function get_volume($id = FALSE) {
+	public function fetch_volume($query = NULL) {
+    if (!is_null($query)) {
+        $this->db->like('vol_name', $query);
+        $this->db->or_like('vol_description', $query);
+    }
+
+    $query = $this->db->get('volume');
+    $volumes = $query->result_array();
+
+    return $volumes;
+}
+
+
+	public function get_volume() {
 
 			$query = $this->db->get('volume');
 			$volumes = $query->result_array();

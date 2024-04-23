@@ -4,10 +4,102 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 class Article extends CI_Controller {
 
 	public function index(){
-		$data['articles'] = $this->articles_model->get_articles();
+		$query = $this->input->get('query');
+		$data['articles'] = $this->articles_model->fetch_articles($query);
 		$this->load->view('templates/header');
-		$this->load->view('admin/articles', $data);
+		$this->load->view('admin/articles/articles', $data);
 		$this->load->view('templates/footer');
+	}
+
+	public function new_article(){
+		$data['volumes'] = $this->volume_model->fetch_volume();
+		$this->load->view('templates/header');
+		$this->load->view('admin/articles/new_article', $data);
+		$this->load->view('templates/footer');
+	}
+
+	public function add(){
+    // Load form validation library
+    $this->load->library('form_validation');
+    $this->load->library('upload');
+
+    // Set validation rules
+    $this->form_validation->set_rules('title', 'Title', 'required');
+    $this->form_validation->set_rules('keywords', 'Keywords', 'required');
+    $this->form_validation->set_rules('abstract', 'Abstract', 'required');
+    $this->form_validation->set_rules('doi', 'DOI', 'required');
+    $this->form_validation->set_rules('date-published', 'Date Published', 'required');
+    $this->form_validation->set_rules('volume_id', 'Volume', 'required');
+
+    // Check if form is submitted and validated
+    if($this->form_validation->run() == FALSE){
+        // Validation failed, load view with validation errors
+        $data['volumes'] = $this->volume_model->fetch_volume();
+        $this->load->view('templates/header');
+        $this->load->view('admin/articles/new_article', $data);
+        $this->load->view('templates/footer');
+    } else {
+        // Form data is valid, proceed with insertion
+        // File Upload Configuration
+        $config['upload_path'] = './public/articles/';
+        $config['allowed_types'] = 'pdf|doc|docx'; // Add more file types as needed
+        $config['max_size'] = 2048; // 2MB maximum file size
+        $config['file_name'] = uniqid(); // Unique file name
+
+        $this->upload->initialize($config);
+
+        if ($this->upload->do_upload('filename')) {
+  
+            $upload_data = $this->upload->data();
+            $file_name = $upload_data['file_name'];
+
+            $data = array(
+                'title' => $this->input->post('title'),
+                'keywords' => $this->input->post('keywords'),
+                'abstract' => $this->input->post('abstract'),
+                'doi' => $this->input->post('doi'),
+                'date_published' => date('Y-m-d H:i:s', strtotime($this->input->post('date-published'))),
+                'published' => $this->input->post('published') ? 1 : 0, 
+                'volumeid' => $this->input->post('volume_id'),
+                'filename' => $file_name // Save the file name in the database
+            );
+
+            $this->articles_model->add_article($data);
+
+            // Redirect after successful insertion
+            redirect('admin/articles');
+        } else {
+            // File upload failed, display error
+            $error = $this->upload->display_errors();
+            echo $error;
+        }
+    }
+	}
+
+	public function download($filename) {
+		$file_path = FCPATH . 'public/articles/' . $filename;
+	
+		// Check if file exists
+		if (file_exists($file_path)) {
+			// Load the download helper
+			$this->load->helper('download');
+	
+			// Set the file MIME type
+			$mime = mime_content_type($file_path);
+	
+			// Generate the server response for the file download
+			force_download($filename, file_get_contents($file_path), $mime);
+		} else {
+			// File not found, handle the error
+			echo "File not found!";
+		}
+	}
+	
+
+
+	public function delete($id){
+		$this->articles_model->delete_article($id);
+		redirect('admin/articles');
 	}
 
 

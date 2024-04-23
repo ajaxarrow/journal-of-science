@@ -115,14 +115,15 @@ body{
 	}
   }
 
-input {
+input, select {
 	padding-left: 15px !important;
+	padding-right: 15px !important;
 	border: solid 2px #e6e6e6;
 	border-radius: 10px;
 	transition: border-color 0.3s, box-shadow 0.3s;
 }
 
-input:focus,
+input:focus, select:focus, select:active,
 input:active {
 	outline: 1px solid var(--green6);
 	border: 1px solid var(--green6);
@@ -249,4 +250,11 @@ hr{
 	height: 16px;
 	z-index: 40;
 	backdrop-filter: blur(100px);
+}
+
+.error{
+	margin-top: 5px;
+	margin-left: 5px;
+	color: rgb(212, 99, 99) !important;
+	font-size: 13px;
 }

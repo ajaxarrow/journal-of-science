@@ -12,12 +12,14 @@
 	<hr/>
 	<div class="p-5">
 		<div class="flex justify-between items-center">
+			<form action="<?php echo base_url(); ?>admin/volumes" method="GET">
 			<div class="relative">
-				<input style="padding-left: 40px !important;" class="w-[290px] h-[49px] with-icon" type="text" placeholder="Search Volumes"/>
+				<input name="query" style="padding-left: 40px !important;" class="w-[290px] h-[49px] with-icon" type="text" placeholder="Search Volumes"/>
 				<i class="ph ph-magnifying-glass absolute left-3 top-1/2 transform -translate-y-1/2 text-[#5F6061] text-[20px]"></i>
 			</div>
+			</form>
 			<a class="btn-filled w-[159px] h-[49px]"><i class="ph ph-plus mr-2"></i> New Volume</a>
-		</div>
+		</div>						
 		<div class="overflow-hidden mt-5 admin-table">
 			<table class="border-collapse w-full bg-white text-left">
 				<thead>

@@ -13,7 +13,7 @@
 			<input class="w-full h-[45px]" type="text" placeholder="Enter Your Password"/>
 		</div>
 		<div class="my-5 flex justify-center">
-			<p class="font-light">Dont' have an Account? <a href="<?php echo base_url(); ?>auth/register" class="underline" >Register Here</a></p>
+			<p class="font-light">Don't have an Account? <a href="<?php echo base_url(); ?>auth/register" class="underline" >Register Here</a></p>
 		</div>
 		<button class="btn-filled w-full rounded-[10px] h-[44px] mb-3">Login</button>
 	</div>
