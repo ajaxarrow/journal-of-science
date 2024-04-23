@@ -50,6 +50,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 |		my-controller/my-method	-> my_controller/my_method
 */
 $route['default_controller'] = 'pages/view';
+
 $route['articles'] = 'pages/view/articles';
 $route['archives'] = 'archives/index';
 $route['archived/(:num)'] = 'archives/index/$1';
@@ -58,12 +59,18 @@ $route['register'] = 'auth/register';
 $route['admin/dashboard'] = 'admin/dashboard';
 $route['admin/users'] = 'user/index';
 $route['admin/articles'] = 'article/index';
-$route['admin/articles/new'] = 'article/new_article';
-$route['admin/articles/add'] = 'article/add';
-$route['admin/articles/delete/(:num)'] = 'article/delete/$1';
-$route['admin/articles/download/(:any)'] = 'article/download/$1';
+$route['admin/article/new'] = 'article/new_article';
+$route['admin/article/add'] = 'article/add_article';
+$route['admin/article/delete/(:num)'] = 'article/delete_article/$1';
+$route['admin/article/download/(:any)'] = 'article/download/$1';
 $route['admin/authors'] = 'author/index';
+$route['admin/author/new'] = 'author/new_author';
+$route['admin/author/add'] = 'author/add_author';
+$route['admin/author/delete/(:num)'] = 'author/delete_author/$1';
 $route['admin/submissions'] = 'submission/index';
 $route['admin/volumes'] = 'volume/index';
+$route['admin/volume/new'] = 'volume/new_volume';
+$route['admin/volume/add'] = 'volume/add_volume';
+$route['admin/volume/delete/(:num)'] = 'volume/delete_volume/$1';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;

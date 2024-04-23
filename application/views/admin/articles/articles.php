@@ -19,7 +19,7 @@
 				</div>		
 			</form>		
 																				
-			<a href="<?php echo base_url(); ?>admin/articles/new" class="btn-filled w-[159px] h-[49px]"><i class="ph ph-plus mr-2"></i> New Article</a>
+			<a href="<?php echo base_url(); ?>admin/article/new" class="btn-filled w-[159px] h-[49px]"><i class="ph ph-plus mr-2"></i> New Article</a>
 		</div>
 		<div class="overflow-hidden mt-5 admin-table">
 			<table class="border-collapse w-full bg-white text-left">
@@ -42,7 +42,7 @@
 						<td class="px-6 py-4"><?php echo $article['keywords']; ?></td>
 						<td class="px-6 py-4"><?php echo $article['abstract']; ?></td>
 						<td class="px-6 py-4">
-								<a href="<?php echo base_url('admin/articles/download/' . $article['filename']); ?>" class="text-green-600 hover:underline"><?php echo $article['filename']; ?></a>
+								<a href="<?php echo base_url('admin/article/download/' . $article['filename']); ?>" class="text-green-600 hover:underline"><?php echo $article['filename']; ?></a>
 						</td>
 
 						<td class="px-6 py-4">
@@ -66,7 +66,7 @@
 								<a  x-data="{ tooltip: 'Edit' }" href="#">
 									<i class="ph ph-pen text-[28px] text-[#5E5E5E]"></i>
 								</a>
-								<a href="<?php echo base_url(); ?>admin/articles/delete/<?php echo $article['article_id'];?>" x-data="{ tooltip: 'Delete' }" href="#">
+								<a href="<?php echo base_url(); ?>admin/article/delete/<?php echo $article['article_id'];?>" x-data="{ tooltip: 'Delete' }">
 								<i class="ph ph-trash text-[28px] text-[#5E5E5E]"></i>
 								</a>
 							</div>

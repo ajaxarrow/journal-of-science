@@ -11,7 +11,7 @@ $this->load->view('./components/admin/admin-topbar.php', $data);
     </div>
     <hr/>
     <div class="p-5">
-        <form action="<?php echo base_url(); ?>admin/articles/add" method="POST" enctype="multipart/form-data">
+        <form action="<?php echo base_url(); ?>admin/article/add" method="POST" enctype="multipart/form-data">
             <div class="my-4">
                 <p class="font-medium mb-2">Title</p>
                 <input name="title" class="w-full h-[45px]" type="text" placeholder="Enter Article Title" value="<?php echo set_value('title'); ?>"/>

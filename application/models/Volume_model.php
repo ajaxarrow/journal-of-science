@@ -64,4 +64,18 @@ class Volume_model extends CI_Model{
 		$query = $this->db->get();
 		return $query->result_array();
 	}
+
+	public function add_volume($data){
+		$this->db->insert('volume', $data);
+	}
+
+	public function update_volume($id, $data){
+		$this->db->where('vol_id', $id);
+		$this->db->update('volume', $data);
+	}
+
+	public function delete_volume($id){
+			$this->db->where('vol_id', $id);
+			$this->db->delete('volume');
+	}
 }

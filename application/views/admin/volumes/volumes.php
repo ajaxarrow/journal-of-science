@@ -18,15 +18,15 @@
 				<i class="ph ph-magnifying-glass absolute left-3 top-1/2 transform -translate-y-1/2 text-[#5F6061] text-[20px]"></i>
 			</div>
 			</form>
-			<a class="btn-filled w-[159px] h-[49px]"><i class="ph ph-plus mr-2"></i> New Volume</a>
+			<a href="<?php echo base_url(); ?>admin/volume/new"  class="btn-filled w-[159px] h-[49px]"><i class="ph ph-plus mr-2"></i> New Volume</a>
 		</div>						
 		<div class="overflow-hidden mt-5 admin-table">
 			<table class="border-collapse w-full bg-white text-left">
 				<thead>
 					<tr class="row-border">
 						<th scope="col" class="px-6 py-4 font-extrabold text-[#0D2015]">Volume Name</th>
-						<th scope="col" class="px-12 py-4 font-extrabold text-[#0D2015]">Description</th>
-						<th scope="col" class="px-12 py-4 font-extrabold text-[#0D2015]">Status</th>
+						<th scope="col" class="px-16 py-4 font-extrabold text-[#0D2015]">Description</th>
+						<th scope="col" class="px-16 py-4 font-extrabold text-[#0D2015]">Status</th>
 						<th scope="col" class="px-12 py-4 font-extrabold"></th>
 					</tr>
 				</thead>
@@ -36,8 +36,8 @@
 						<th class="flex items-center gap-3 px-6 py-4 font-normal">
 							<?php echo $volume['vol_name']; ?>
 						</th>
-						<td class="px-12 py-4"><?php echo $volume['vol_description']; ?></td>
-						<td class="px-12 py-4">
+						<td class="px-16 py-4"><?php echo $volume['vol_description']; ?></td>
+						<td class="px-16 py-4">
 							<?php
 							if ($volume['archived'] ==  1) {
 								echo '<span class="flex justify-center items-center h-[30px] w-[84px] text-sm rounded-full bg-[#D1DEED] text-[#091053]">
@@ -64,7 +64,7 @@
 								<a x-data="{ tooltip: 'Edit' }" href="#">
 									<i class="ph ph-pen text-[28px] text-[#5E5E5E]"></i>
 								</a>
-								<a x-data="{ tooltip: 'Delete' }" href="#">
+								<a href="<?php echo base_url(); ?>admin/volume/delete/<?php echo $volume['vol_id'];?>">
 								<i class="ph ph-trash text-[28px] text-[#5E5E5E]"></i>
 								</a>
 							</div>

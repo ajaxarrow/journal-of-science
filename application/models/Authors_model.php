@@ -19,4 +19,19 @@ class Authors_model extends CI_Model{
 		$query = $this->db->get_where('authors', array('author_id' => $id));
 		return $query->row_array();
 	}
+
+	public function add_author($data){
+		$this->db->insert('authors', $data);
+	}
+
+	public function update_author($id, $data){
+		$this->db->where('author_id', $id);
+		$this->db->update('authors', $data);
+	}
+
+	public function delete_author($id){
+			$this->db->where('author_id', $id);
+			$this->db->delete('authors');
+	}
+
 }

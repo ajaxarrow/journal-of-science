@@ -18,10 +18,7 @@ class Article extends CI_Controller {
 		$this->load->view('templates/footer');
 	}
 
-	public function add(){
-    // Load form validation library
-    $this->load->library('form_validation');
-    $this->load->library('upload');
+	public function add_article(){
 
     // Set validation rules
     $this->form_validation->set_rules('title', 'Title', 'required');
@@ -39,10 +36,8 @@ class Article extends CI_Controller {
         $this->load->view('admin/articles/new_article', $data);
         $this->load->view('templates/footer');
     } else {
-        // Form data is valid, proceed with insertion
-        // File Upload Configuration
         $config['upload_path'] = './public/articles/';
-        $config['allowed_types'] = 'pdf|doc|docx'; // Add more file types as needed
+        $config['allowed_types'] = 'pdf|doc|docx'; 
         $config['max_size'] = 2048; // 2MB maximum file size
         $config['file_name'] = uniqid(); // Unique file name
 
@@ -61,7 +56,7 @@ class Article extends CI_Controller {
                 'date_published' => date('Y-m-d H:i:s', strtotime($this->input->post('date-published'))),
                 'published' => $this->input->post('published') ? 1 : 0, 
                 'volumeid' => $this->input->post('volume_id'),
-                'filename' => $file_name // Save the file name in the database
+                'filename' => $file_name 
             );
 
             $this->articles_model->add_article($data);
@@ -97,7 +92,7 @@ class Article extends CI_Controller {
 	
 
 
-	public function delete($id){
+	public function delete_article($id){
 		$this->articles_model->delete_article($id);
 		redirect('admin/articles');
 	}
