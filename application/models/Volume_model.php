@@ -42,14 +42,24 @@ class Volume_model extends CI_Model{
 
 
 	public function get_volume_by_id($id) {
+    $volume = $this->db->get_where('volume', array('vol_id' => $id))->row_array();
 
-		$volumes = $this->db->get_where('volume', array('vol_id' => $id))->result_array();
+    if ($volume) {
+        $volume['articles'] = $this->get_articles_by_volume_id($volume['vol_id']);
+    }
 
-		foreach ($volumes as &$volume) {
-			$volume['articles'] = $this->get_articles_by_volume_id($volume['vol_id']);
-		}
-		return $volumes;
+    return $volume;
 	}
+
+	// public function get_volume_by_id($id) {
+
+	// 	$volumes = $this->db->get_where('volume', array('vol_id' => $id))->result_array();
+
+	// 	foreach ($volumes as &$volume) {
+	// 		$volume['articles'] = $this->get_articles_by_volume_id($volume['vol_id']);
+	// 	}
+	// 	return $volumes;
+	// }
 
 
 

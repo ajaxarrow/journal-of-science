@@ -8,10 +8,10 @@ class Archives extends CI_Controller {
 		$data['sidebar'] = $this->load->view('components/global/volume-sidebar', $data, TRUE);
 		$data['id'] = $id;
 		if($data['id']){
-			$data['volume_details'] = $this->volume_model->get_volume_by_id($data['id']);
+			$data['volume'] = $this->volume_model->get_volume_by_id($data['id']);
 		} else {
 			$data['id'] = $data['volumes'][0]['vol_id'];
-			$data['volume_details'] = $this->volume_model->get_volume_by_id($data['id']);
+			$data['volume'] = $this->volume_model->get_volume_by_id($data['id']);
 		}
 
 		$this->load->view('templates/header');

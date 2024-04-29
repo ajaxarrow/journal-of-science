@@ -19,7 +19,7 @@
 					<div class="flex justify-between items-center">
 						<div class="flex items-center space-x-2">
 						<?php if (!empty($article['author_image'])): ?>
-							<img class="avatar" src="<?php echo $article['author_image'];?>" alt="<?php echo $article['author_name'];?>" />
+							<img class="avatar" src="<?php echo base_url(); ?>public/profile-images/<?php echo $article['author_image']; ?>" alt="<?php echo $article['author_name'];?>" />
 						<?php else: ?>
 							<img class="avatar" src="https://hwchamber.co.uk/wp-content/uploads/2022/04/avatar-placeholder.gif" alt="<?php echo $article['author_name'];?>" />
 						<?php endif; ?>

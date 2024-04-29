@@ -15,7 +15,7 @@ class Authors_model extends CI_Model{
 		
 	}
 
-	public function get_authors_by_id($id){
+	public function get_author_by_id($id){
 		$query = $this->db->get_where('authors', array('author_id' => $id));
 		return $query->row_array();
 	}

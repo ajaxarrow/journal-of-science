@@ -3,7 +3,6 @@
 <div class="flex">
 		<?php echo $sidebar ?>
 		<div class="w-[700px] ml-[100px]" >
-		<?php foreach ($volume_details as $volume): ?>
 			<div class="mt-10">
 				<p class="text-2xl font-semibold ">
 					<?php echo $volume['vol_name']; ?>
@@ -20,7 +19,7 @@
 					<div class="flex justify-between items-center">
 						<div class="flex items-center space-x-2">
 						<?php if (!empty($article['author_image'])): ?>
-							<img class="avatar" src="<?php echo $article['author_image'];?>" alt="<?php echo $article['author_name'];?>" />
+							<img class="avatar" src="<?php echo base_url(); ?>public/profile-images/<?php echo $article['author_image']; ?>" alt="<?php echo $article['author_name'];?>" />
 						<?php else: ?>
 							<img class="avatar" src="https://hwchamber.co.uk/wp-content/uploads/2022/04/avatar-placeholder.gif" alt="<?php echo $article['author_name'];?>" />
 						<?php endif; ?>
@@ -40,8 +39,6 @@
 				</article>
 			<?php endforeach; ?>
 
-
-	<?php endforeach; ?>
 		</div>
 	</div>
 </div>

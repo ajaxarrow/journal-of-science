@@ -29,14 +29,7 @@ class Articles_model extends CI_Model{
 	}
 
 	public function get_article_by_id($id){
-		$this->db->select('authors.*, articles.*');
-		$this->db->from('article_author');
-		$this->db->join('articles', 'article_author.article_id = articles.article_id', 'inner');
-		$this->db->join('authors', 'article_author.authid = authors.author_id', 'inner');
-		$this->db->order_by('articles.date_published', 'DESC');
-		$this->db->where('articles.article_id', $id);
-		$query = $this->db->get();
-		return $query->result_array();
+		return $this->db->get_where('articles', array('article_id' => $id))->row_array();
 	}
 
 	public function get_articles_by_volume_id($id){

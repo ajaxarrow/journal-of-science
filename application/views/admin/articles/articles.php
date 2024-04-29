@@ -63,10 +63,10 @@
 						</td>
 						<td class="px-6 py-4">
 							<div class="flex justify-end gap-4">
-								<a  x-data="{ tooltip: 'Edit' }" href="#">
+							<a href="<?php echo base_url(); ?>admin/article/edit/<?php echo $article['article_id'];?>">
 									<i class="ph ph-pen text-[28px] text-[#5E5E5E]"></i>
 								</a>
-								<a href="<?php echo base_url(); ?>admin/article/delete/<?php echo $article['article_id'];?>" x-data="{ tooltip: 'Delete' }">
+								<a href="<?php echo base_url(); ?>admin/article/delete/<?php echo $article['article_id'];?>">
 								<i class="ph ph-trash text-[28px] text-[#5E5E5E]"></i>
 								</a>
 							</div>
