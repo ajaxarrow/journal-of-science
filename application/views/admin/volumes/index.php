@@ -61,7 +61,10 @@
 						</td>
 						<td class="px-6 py-4">
 							<div class="flex justify-end gap-4">
-							<a href="<?php echo base_url(); ?>admin/volume/edit/<?php echo $volume['vol_id'];?>">
+								<a href="<?php echo base_url(); ?>admin/volume/<?php echo $volume['vol_id'];?>">
+									<i class="ph ph-eye text-[28px] text-[#5E5E5E]"></i>
+								</a>
+								<a href="<?php echo base_url(); ?>admin/volume/edit/<?php echo $volume['vol_id'];?>">
 									<i class="ph ph-pen text-[28px] text-[#5E5E5E]"></i>
 								</a>
 								<a href="<?php echo base_url(); ?>admin/volume/delete/<?php echo $volume['vol_id'];?>">

@@ -7,7 +7,8 @@ class Pages extends CI_Controller {
 	{
 		if($page === 'articles'){
 			$data['volumes'] = $this->volume_model->get_volume();
-			$data['articles'] = $this->articles_model->get_articles();
+			// print_r($data['volumes']);
+			// $data['articles'] = $this->articles_model->fetch_articles();
 			$this->load->view('templates/header');
 			$this->load->view('global/articles.php',  $data);
 			$this->load->view('templates/footer');

@@ -66,6 +66,9 @@
 						</td>
 						<td class="px-12 py-4">
 							<div class="flex justify-end gap-4">
+								<a href="<?php echo base_url(); ?>admin/user/<?php echo $user['id'];?>">
+									<i class="ph ph-eye text-[28px] text-[#5E5E5E]"></i>
+								</a>
 								<a href="<?php echo base_url(); ?>admin/user/edit/<?php echo $user['id'];?>">
 									<i class="ph ph-pen text-[28px] text-[#5E5E5E]"></i>
 								</a>

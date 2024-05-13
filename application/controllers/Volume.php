@@ -7,7 +7,14 @@ class Volume extends CI_Controller {
 		$query = $this->input->get('query');
 		$data['volumes'] = $this->volume_model->fetch_volume($query);
 		$this->load->view('templates/header');
-		$this->load->view('admin/volumes/volumes', $data);
+		$this->load->view('admin/volumes/index', $data);
+		$this->load->view('templates/footer');
+	}
+
+	public function view_volume($id){
+		$data['volume'] = $this->volume_model->get_volume_by_id_with_raw_articles($id);
+		$this->load->view('templates/header');
+		$this->load->view('admin/volumes/view_volume', $data);
 		$this->load->view('templates/footer');
 	}
 

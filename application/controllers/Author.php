@@ -7,7 +7,13 @@ class Author extends CI_Controller {
 		$query = $this->input->get('query');
 		$data['authors'] = $this->authors_model->get_authors($query);
 		$this->load->view('templates/header');
-		$this->load->view('admin/authors/authors', $data);
+		$this->load->view('admin/authors/index', $data);
+		$this->load->view('templates/footer');
+	}
+	public function view_author($id){
+		$data['author'] = $this->authors_model->get_author_by_id($id);
+		$this->load->view('templates/header');
+		$this->load->view('admin/authors/view_author', $data);
 		$this->load->view('templates/footer');
 	}
 
@@ -16,6 +22,7 @@ class Author extends CI_Controller {
 		$this->load->view('admin/authors/new_author');
 		$this->load->view('templates/footer');
 	}
+	
 
 	public function add_author(){
 		$this->form_validation->set_rules('author_name','Author Name','required');

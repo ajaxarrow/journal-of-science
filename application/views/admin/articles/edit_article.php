@@ -24,7 +24,7 @@ $this->load->view('./components/admin/admin-topbar.php', $data);
             </div>
             <div class="my-4">
                 <p class="font-medium mb-2">Abstract</p>
-                <input name="abstract" class="w-full h-[45px]" type="text" placeholder="Provide an abstract" value="<?php echo set_value('abstract', $article['abstract']); ?>"/>
+                <textarea id="editor1" name="abstract" class="w-full h-[45px]" type="text" placeholder="Provide an abstract"><?php echo set_value('abstract', $article['abstract']); ?></textarea>
                 <?php echo form_error('abstract', '<div class="error">', '</div>'); ?> <!-- Display abstract validation error -->
             </div>
             <div class="my-4">

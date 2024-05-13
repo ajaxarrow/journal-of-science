@@ -10,8 +10,18 @@ class User_model extends CI_Model{
 		$this->db->or_like('email', $query);
 		$query = $this->db->get('users');
 		
+	
 		return $query->result_array();
 	}
+
+	public function get_users_by_articles($id){
+		$article_authors = $this->db->get_where('article_author', array('article_id' => $id))->result_array();
+		foreach ($article_authors as &$article_author) { 
+			$article_author['author'] = $this->volume_model->get_authors_by_id($article_author['authid']);
+		}
+		return $article_authors;
+	}
+
 
 	public function get_user_by_id($id){
 		$query = $this->db->get_where('users', array('id' => $id));

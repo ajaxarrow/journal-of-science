@@ -26,10 +26,9 @@
 				<thead>
 					<tr class="row-border">
 						<th scope="col" class="px-6 py-4 font-extrabold text-[#0D2015]">Title</th>
-						<th scope="col" class="px-6 py-4 font-extrabold text-[#0D2015]">Keywords</th>
-						<th scope="col" class="px-6 py-4 font-extrabold text-[#0D2015]">Abstract</th>
-						<th scope="col" class="px-6 py-4 font-extrabold text-[#0D2015]">File</th>
-						<th scope="col" class="px-6 py-4 font-extrabold text-[#0D2015]">Status</th>
+						<th scope="col" class="px-12 py-4 font-extrabold text-[#0D2015]">Keywords</th>
+						<th scope="col" class="px-12 py-4 font-extrabold text-[#0D2015]">File</th>
+						<th scope="col" class="px-12 py-4 font-extrabold text-[#0D2015]">Status</th>
 						<th scope="col" class="px-6 py-4 font-extrabold"></th>
 					</tr>
 				</thead>
@@ -39,13 +38,12 @@
 						<th class="flex items-center gap-3 px-6 py-4 font-normal">
 						<?php echo $article['title'];?>
 						</th>
-						<td class="px-6 py-4"><?php echo $article['keywords']; ?></td>
-						<td class="px-6 py-4"><?php echo $article['abstract']; ?></td>
-						<td class="px-6 py-4">
+						<td class="px-12 py-4"><?php echo $article['keywords']; ?></td>
+						<td class="px-12 py-4">
 								<a href="<?php echo base_url('admin/article/download/' . $article['filename']); ?>" class="text-green-600 hover:underline"><?php echo $article['filename']; ?></a>
 						</td>
 
-						<td class="px-6 py-4">
+						<td class="px-12 py-4">
 							<?php
 							if ($article['published'] ==  1) {
 		
@@ -63,7 +61,13 @@
 						</td>
 						<td class="px-6 py-4">
 							<div class="flex justify-end gap-4">
-							<a href="<?php echo base_url(); ?>admin/article/edit/<?php echo $article['article_id'];?>">
+								<a href="<?php echo base_url(); ?>admin/article/<?php echo $article['article_id'];?>/authors">
+									<i class="ph ph-user-plus text-[28px] text-[#5E5E5E]"></i>
+								</a>
+								<a href="<?php echo base_url(); ?>admin/article/<?php echo $article['article_id'];?>">
+									<i class="ph ph-eye text-[28px] text-[#5E5E5E]"></i>
+								</a>
+								<a href="<?php echo base_url(); ?>admin/article/edit/<?php echo $article['article_id'];?>">
 									<i class="ph ph-pen text-[28px] text-[#5E5E5E]"></i>
 								</a>
 								<a href="<?php echo base_url(); ?>admin/article/delete/<?php echo $article['article_id'];?>">

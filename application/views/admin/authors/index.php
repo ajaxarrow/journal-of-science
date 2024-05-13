@@ -49,7 +49,10 @@
 						<td class="px-12 py-4"><?php echo $author['author_contact']; ?></td>
 						<td class="px-12 py-4">
 							<div class="flex justify-end gap-4">
-							<a href="<?php echo base_url(); ?>admin/author/edit/<?php echo $author['author_id'];?>">
+								<a href="<?php echo base_url(); ?>admin/author/<?php echo $author['author_id'];?>">
+									<i class="ph ph-eye text-[28px] text-[#5E5E5E]"></i>
+								</a>
+								<a href="<?php echo base_url(); ?>admin/author/edit/<?php echo $author['author_id'];?>">
 									<i class="ph ph-pen text-[28px] text-[#5E5E5E]"></i>
 								</a>
 								<a href="<?php echo base_url(); ?>admin/author/delete/<?php echo $author['author_id'];?>">

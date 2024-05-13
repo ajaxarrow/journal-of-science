@@ -7,7 +7,14 @@ class User extends CI_Controller {
 		$query = $this->input->get('query');
 		$data['users'] = $this->user_model->get_users($query);
 		$this->load->view('templates/header');
-		$this->load->view('admin/users/users', $data);
+		$this->load->view('admin/users/index', $data);
+		$this->load->view('templates/footer');
+	}
+
+	public function view_user($id){
+		$data['user'] = $this->user_model->get_user_by_id($id);
+		$this->load->view('templates/header');
+		$this->load->view('admin/users/view_user', $data);
 		$this->load->view('templates/footer');
 	}
 
