@@ -60,7 +60,10 @@ class Author extends CI_Controller {
 					redirect('admin/authors');
 			} else {
 					$error = $this->upload->display_errors();
-					echo $error;
+					$data['error'] = $error;
+					$this->load->view('templates/header');
+					$this->load->view('admin/authors/new_author', $data);
+					$this->load->view('templates/footer');
 			}
 		}
 	}

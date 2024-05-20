@@ -34,7 +34,7 @@ $this->load->view('./components/admin/admin-topbar.php', $data);
             </div>
 						<div class="my-4">
 								<p class="font-medium mb-2">Image</p>
-								<input name="author_image" class="w-full h-[45px]" type="file" placeholder="Select File"/>
+								<input name="author_image" class="w-full h-[45px]" accept=".jpg, .jpeg, .png" type="file" placeholder="Select File"/>
 								<?php echo form_error('author_image', '<div class="error">', '</div>'); ?> <!-- Display filename validation error -->
 						</div>
             <div class="flex justify-end">

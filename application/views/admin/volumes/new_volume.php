@@ -19,7 +19,9 @@ $this->load->view('./components/admin/admin-topbar.php', $data);
             </div>
             <div class="my-4">
                 <p class="font-medium mb-2">Volume Description</p>
-                <input name="vol_desc" class="w-full h-[45px]" type="text" placeholder="Provide volume description" value="<?php echo set_value('vol_desc'); ?>"/>
+                <textarea id="editor1" name="vol_desc" class="w-full h-[45px]" type="text" placeholder="Provide volume description">
+				<?php echo set_value('vol_desc'); ?>
+				</textarea>
                 <?php echo form_error('vol_description', '<div class="error">', '</div>'); ?> <!-- Display keywords validation error -->
             </div>
             <div class="my-4 flex items-center gap-2">

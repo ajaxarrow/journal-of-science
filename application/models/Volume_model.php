@@ -17,7 +17,7 @@ class Volume_model extends CI_Model{
 
 
 	public function get_volume() {
-
+			$this->db->order_by('vol_name', 'ASC');
 			$query = $this->db->get('volume');
 			$volumes = $query->result_array();
 
@@ -30,6 +30,7 @@ class Volume_model extends CI_Model{
 	}
 
 	public function get_archived_volumes() {
+		$this->db->order_by('vol_name', 'ASC');
 		$this->db->where('archived', 1);
 		$query = $this->db->get('volume');
 		$volumes = $query->result_array();
@@ -84,7 +85,7 @@ class Volume_model extends CI_Model{
 		// $this->db->join('authors', 'article_author.authid = authors.author_id', 'inner');
 		// $this->db->order_by('articles.date_published', 'DESC');
 		// $this->db->where('articles.volumeid', $id);
-
+		$this->db->order_by('title', 'ASC');
 		$query = $this->db->get_where('articles', array('volumeid'=> $id));
 		$articles = $query->result_array();
 		foreach ($articles as &$article) {

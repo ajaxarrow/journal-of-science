@@ -36,7 +36,7 @@
 						<th class="flex items-center gap-3 px-6 py-4 font-normal">
 							<?php echo $volume['vol_name']; ?>
 						</th>
-						<td class="px-16 py-4"><?php echo $volume['vol_description']; ?></td>
+						<td class="px-16 py-4"><?php echo word_limiter($volume['vol_description'], 25, '...'); ?></td>
 						<td class="px-16 py-4">
 							<?php
 							if ($volume['archived'] ==  1) {

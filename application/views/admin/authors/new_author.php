@@ -32,11 +32,16 @@ $this->load->view('./components/admin/admin-topbar.php', $data);
                 <input name="author_contact" class="w-full h-[45px]" type="text" placeholder="Enter author contact number" value="<?php echo set_value('author_contact'); ?>"/>
                 <?php echo form_error('author_contact', '<div class="error">', '</div>'); ?> <!-- Display doi validation error -->
             </div>
-						<div class="my-4">
-								<p class="font-medium mb-2">Image</p>
-								<input name="author_image" class="w-full h-[45px]" type="file" placeholder="Select File"/>
-								<?php echo form_error('author_image', '<div class="error">', '</div>'); ?> <!-- Display filename validation error -->
-						</div>
+			<div class="my-4">
+				<p class="font-medium mb-2">Image</p>
+				<input name="author_image" class="w-full h-[45px]" accept=".jpg, .jpeg, .png" type="file" placeholder="Select File"/>
+				<?php echo form_error('author_image', '<div class="error">', '</div>'); ?> 
+				<?php if(isset($error)): ?>
+					<div class="error">
+						<?php echo $error; ?>
+					</div>
+				<?php endif; ?>
+			</div>
             <div class="flex justify-end">
                 <button type="submit" class="btn-filled w-[159px] h-[44px]">Submit</button>
             </div>

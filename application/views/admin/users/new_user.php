@@ -37,11 +37,16 @@ $this->load->view('./components/admin/admin-topbar.php', $data);
                 <input name="user_role" class="w-full h-[45px]" type="text" placeholder="Enter user role" value="<?php echo set_value('user_role'); ?>"/>
                 <?php echo form_error('user_role', '<div class="error">', '</div>'); ?> <!-- Display doi validation error -->
             </div>
-						<div class="my-4">
-								<p class="font-medium mb-2">Image</p>
-								<input name="user_image" class="w-full h-[45px]" type="file" placeholder="Select File"/>
-								<?php echo form_error('user_image', '<div class="error">', '</div>'); ?> <!-- Display filename validation error -->
+			<div class="my-4">
+					<p class="font-medium mb-2">Image</p>
+					<input name="user_image" class="w-full h-[45px]" accept=".jpg, .jpeg, .png" type="file" placeholder="Select File"/>
+					<?php echo form_error('user_image', '<div class="error">', '</div>'); ?> 
+					<?php if(isset($error)): ?>
+						<div class="error">
+							<?php echo $error; ?>
 						</div>
+					<?php endif; ?>
+			</div>
 						<div class="my-4 flex items-center gap-2">
                 <input name="user_status" class="w-[25px] h-[25px]" type="checkbox" <?php echo set_checkbox('user_status', '1'); ?> />
                 <label class="font-medium">Active</label>

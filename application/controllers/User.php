@@ -63,7 +63,10 @@ class User extends CI_Controller {
 					redirect('admin/users');
 			} else {
 					$error = $this->upload->display_errors();
-					echo $error;
+					$data['error'] = $error;
+					$this->load->view('templates/header');
+					$this->load->view('admin/users/new_user', $data);
+					$this->load->view('templates/footer');
 			}
 		}
 	}

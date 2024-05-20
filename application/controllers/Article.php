@@ -82,7 +82,11 @@ class Article extends CI_Controller {
         } else {
             // File upload failed, display error
             $error = $this->upload->display_errors();
-            echo $error;
+						$data['volumes'] = $this->volume_model->fetch_volume();
+						$data['error'] = $error;
+						$this->load->view('templates/header');
+						$this->load->view('admin/articles/new_article', $data);
+						$this->load->view('templates/footer');
         }
     }
 	}

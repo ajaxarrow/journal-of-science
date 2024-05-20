@@ -4,7 +4,7 @@
 		<div class="ml-10 w-3/4">
 			<p class="hero-title">Enhancing Academic Excellence with Effortless Article Repository</p>
 			<p class="hero-subtitle my-5">Empower Students, Faculty, and Librarians with Seamless Article Preservation</p>
-			<a class="btn-filled h-[44px] w-[144px] mr-2" href="<?php echo base_url(); ?>auth/register">Start Now!</a>
+			<a class="btn-filled h-[44px] w-[144px] mr-2" href="<?php echo base_url(); ?>admin/users">Start Now!</a>
 		</div>
 	</div>
 	<div class="flex justify-center items-center">

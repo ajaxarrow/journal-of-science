@@ -45,7 +45,7 @@ $this->load->view('./components/admin/admin-topbar.php', $data);
 						</div>
 						<div class="my-4">
 								<p class="font-medium mb-2">File</p>
-								<input name="filename" class="w-full h-[45px]" type="file" placeholder="Select File"/>
+								<input name="filename" accept=".pdf" class="w-full h-[45px]" type="file" placeholder="Select File"/>
 								<?php echo form_error('filename', '<div class="error">', '</div>'); ?> <!-- Display filename validation error -->
 						</div>
 

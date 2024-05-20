@@ -24,7 +24,8 @@ $this->load->view('./components/admin/admin-topbar.php', $data);
             </div>
             <div class="my-4">
                 <p class="font-medium mb-2">Abstract</p>
-				<textarea id="editor1" name="abstract" class="w-full" type="text" placeholder="Provide an abstract" value="<?php echo set_value('abstract'); ?>">
+				<textarea id="editor1" name="abstract" class="w-full" type="text" placeholder="Provide an abstract">
+				<?php echo set_value('abstract'); ?>
 				</textarea>
                 <?php echo form_error('abstract', '<div class="error">', '</div>'); ?> <!-- Display abstract validation error -->
             </div>
@@ -42,11 +43,16 @@ $this->load->view('./components/admin/admin-topbar.php', $data);
                 </select>
                 <?php echo form_error('volume_id', '<div class="error">', '</div>'); ?> <!-- Display volume_id validation error -->
             </div>
-						<div class="my-4">
-								<p class="font-medium mb-2">File</p>
-								<input name="filename" class="w-full h-[45px]" type="file" placeholder="Select File"/>
-								<?php echo form_error('filename', '<div class="error">', '</div>'); ?> <!-- Display filename validation error -->
+			<div class="my-4">
+					<p class="font-medium mb-2">File</p>
+					<input name="filename" class="w-full h-[45px]" type="file" accept=".pdf" placeholder="Select File"/>
+					<?php echo form_error('filename', '<div class="error">', '</div>'); ?> 
+					<?php if(isset($error)): ?>
+						<div class="error">
+							<?php echo $error; ?>
 						</div>
+					<?php endif; ?>
+			</div>
 
             <div class="my-4">
                 <p class="font-medium mb-2">Date Published</p>

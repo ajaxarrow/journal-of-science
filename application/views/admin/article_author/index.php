@@ -47,7 +47,7 @@
 						<td class="px-12 py-4"><?php echo  $articleauthor['author']['author_contact']; ?></td>
 						<td class="px-12 py-4">
 							<div class="flex justify-end gap-4">
-								<a href="<?php echo base_url(); ?>admin/author/<?php echo $articleauthor['id'];?>">
+								<a href="<?php echo base_url(); ?>admin/author/<?php echo $articleauthor['id'];?>" class="tooltip">
 									<i class="ph ph-eye text-[28px] text-[#5E5E5E]"></i>
 								</a>
 								<a href="<?php echo base_url(); ?>admin/article/<?php echo $articleauthor['article_id'];?>/author/edit/<?php echo $articleauthor['id'];?>">
