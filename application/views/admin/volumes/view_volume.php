@@ -8,7 +8,7 @@
 	<div class="p-5">
 		<a href="<?php echo base_url(); ?>admin/volumes/" class="text-sm text-[#5E5E5E]"> 
 			<i class="ph ph-arrow-left"></i>
-			Back to article lists
+			Back to volume lists
 		</a>
 		<div class="mt-4">
 			<p class="text-xl font-bold"><?php echo $volume['vol_name']; ?></p>

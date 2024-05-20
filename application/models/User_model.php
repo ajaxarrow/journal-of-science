@@ -3,9 +3,11 @@ class User_model extends CI_Model{
 
 	public function get_users($query=NULL){
 		if($query === NULL){
+			$this->db->order_by('complete_name', 'ASC');
 			$query = $this->db->get('users');
 			return $query->result_array();
 		}
+		$this->db->order_by('complete_name', 'ASC');
 		$this->db->like('complete_name', $query);
 		$this->db->or_like('email', $query);
 		$query = $this->db->get('users');

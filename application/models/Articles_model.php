@@ -3,10 +3,12 @@ class Articles_model extends CI_Model{
 
 	public function fetch_articles($query=NULL){
 		if ($query !== NULL ) {
+			$this->db->order_by('title', 'ASC');
 			$this->db->like('title', $query);
 			$this->db->or_like('keywords', $query);
 			$this->db->like('abstract', $query);
 		}
+		$this->db->order_by('title', 'ASC');
 		$query = $this->db->get('articles');
 		return $query->result_array();
 	}

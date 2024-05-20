@@ -11,6 +11,14 @@ class Article extends CI_Controller {
 		$this->load->view('templates/footer');
 	}
 
+	public function view($id){
+		$data['article'] = $this->articles_model->get_article_by_id($id);
+		$data['volume'] = $this->volume_model->get_volume_by_id($data['article']['volumeid']);
+		$this->load->view('templates/header');
+		$this->load->view('global/view_article', $data);
+		$this->load->view('templates/footer');
+	}
+
 	public function view_article($id){
 		$data['article'] = $this->articles_model->get_article_by_id($id);
 		$data['volume'] = $this->volume_model->get_volume_by_id($data['article']['volumeid']);

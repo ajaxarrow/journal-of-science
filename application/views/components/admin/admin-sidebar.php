@@ -1,11 +1,11 @@
 <?php
 // Define an array of navigation items
 $navItems = [
-	[
-		'name' => 'Dashboard',
-		'link' => 'admin/dashboard',
-		'icon' => 'ph-house',
-	],
+	// [
+	// 	'name' => 'Dashboard',
+	// 	'link' => 'admin/dashboard',
+	// 	'icon' => 'ph-house',
+	// ],
 	[
 		'name' => 'Manage Users',
 		'link' => 'admin/users',
@@ -31,11 +31,11 @@ $navItems = [
 		'link' => 'admin/volumes',
 		'icon' => 'ph-books',
 	],
-	[
-		'name' => 'Settings',
-		'link' => 'admin/settings',
-		'icon' => 'ph-gear',
-	],
+	// [
+	// 	'name' => 'Settings',
+	// 	'link' => 'admin/settings',
+	// 	'icon' => 'ph-gear',
+	// ],
 	[
 		'name' => 'Logout',
 		'link' => 'logout',

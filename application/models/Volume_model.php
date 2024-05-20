@@ -3,10 +3,12 @@ class Volume_model extends CI_Model{
 
 	public function fetch_volume($query = NULL) {
     if (!is_null($query)) {
+			$this->db->order_by('vol_name', 'ASC');
         $this->db->like('vol_name', $query);
         $this->db->or_like('vol_description', $query);
     }
 
+		$this->db->order_by('vol_name', 'ASC');
     $query = $this->db->get('volume');
     $volumes = $query->result_array();
 
@@ -29,7 +31,6 @@ class Volume_model extends CI_Model{
 
 	public function get_archived_volumes() {
 		$this->db->where('archived', 1);
-		$this->db->where('published', 1);
 		$query = $this->db->get('volume');
 		$volumes = $query->result_array();
 
@@ -53,12 +54,15 @@ class Volume_model extends CI_Model{
 
 	public function get_volume_by_id_with_raw_articles($id) {
     $volume = $this->db->get_where('volume', array('vol_id' => $id))->row_array();
-
     if ($volume) {
-        $volume['articles'] = $this->get_raw_articles_by_volume_id($volume['vol_id']);
+        $volume['articles'] = $this->get_articles_by_volume_id($volume['vol_id']);
     }
 
     return $volume;
+	}
+
+	public function get_articles_by_volume($id){
+
 	}
 
 	// public function get_volume_by_id($id) {

@@ -11,11 +11,16 @@
 					<?php echo $volume['vol_description']; ?>
 				</p>
 			</div>
-			<?php foreach ($volume['articles'] as $article): ?>
+			<?php if (empty($volume['articles'])): ?>
+        <p class="my-5 text-center">No articles found</p>
+    	<?php else: ?>
+				<?php foreach ($volume['articles'] as $article): ?>
 				<?php if ($article['published'] == 1) {?>
 				<article class="p-6 bg-white rounded-2xl border border-gray-200 shadow-md my-5">
 					<p class="my-2 text-[20px] font-extrabold tracking-tight text-gray-900 "><a href="#"><?php echo $article['title'];?></a></p>
-					<p class="my-1 font-light text-[#5F6061] "><?php echo $article['abstract']; ?></p>
+					<p class="my-1 font-light text-[#5F6061] ">
+						<?php echo word_limiter($article['abstract'], 50, '...'); ?>
+					</p>
 					<p class="my-3 font-light"><span class="font-medium">Keywords: </span> <?php echo $article['keywords']; ?></p>
 					<div class="flex justify-between items-center">
 					<?php if (!empty($article['authors'])): ?>
@@ -47,7 +52,7 @@
 								</div>
 						</div>
 						<?php endif; ?>
-					<a href="#" class="read-more-btn text-sm font-medium h-[35px] w-[125px]">
+					<a href="<?php echo base_url(); ?>article/<?php echo $article['article_id'] ?>" class="read-more-btn text-sm font-medium h-[35px] w-[125px]">
 							Read more
 					</a>
 				</div>
@@ -55,14 +60,11 @@
 				</article>
 				<?php } ?>
 			<?php endforeach; ?>
+				<?php endif; ?>
 		<?php } ?>
 
 
 	<?php endforeach; ?>
-		
-
-	<section class="articles-card">
-		<p></p>
-		<p></p>
-	</section>
+	
 </div>
+
