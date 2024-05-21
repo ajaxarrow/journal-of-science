@@ -86,8 +86,9 @@ class User extends CI_Controller {
 		$this->form_validation->set_rules('user_role','User Role','required');
 
 		if($this->form_validation->run() == FALSE){
+			$data['user'] = $this->user_model->get_user_by_id($id);
 			$this->load->view('templates/header');
-			$this->load->view('admin/users/new_user');
+			$this->load->view('admin/users/edit_user', $data);
 			$this->load->view('templates/footer');
 		}else{
 			if (!empty($_FILES['user_image']['name'])) {

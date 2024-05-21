@@ -28,7 +28,7 @@ class Article extends CI_Controller {
 	}
 
 	public function new_article(){
-		$data['volumes'] = $this->volume_model->fetch_volume();
+		$data['volumes'] = $this->volume_model->fetch_published_volume();
 		$this->load->view('templates/header');
 		$this->load->view('admin/articles/new_article', $data);
 		$this->load->view('templates/footer');
@@ -92,7 +92,7 @@ class Article extends CI_Controller {
 	}
 
 	public function edit_article($id){
-		$data['volumes'] = $this->volume_model->fetch_volume();
+		$data['volumes'] = $this->volume_model->fetch_published_volume();
 		$data['article'] = $this->articles_model->get_article_by_id($id);
 		$this->load->view('templates/header');
 		$this->load->view('admin/articles/edit_article', $data);
@@ -110,9 +110,10 @@ class Article extends CI_Controller {
 		// Check if form is submitted and validated
 		if($this->form_validation->run() == FALSE){
 			// Validation failed, load view with validation errors
-			$data['volumes'] = $this->volume_model->fetch_volume();
+			$data['volumes'] = $this->volume_model->fetch_published_volume();
+			$data['article'] = $this->articles_model->get_article_by_id($id);
 			$this->load->view('templates/header');
-			$this->load->view('admin/articles/new_article', $data);
+			$this->load->view('admin/articles/edit_article', $data);
 			$this->load->view('templates/footer');
 		} else {
 			// Check if file input has data

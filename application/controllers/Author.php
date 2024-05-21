@@ -83,8 +83,9 @@ class Author extends CI_Controller {
 		$this->form_validation->set_rules('author_contact','Author Contact','required');
 
 		if($this->form_validation->run() == FALSE){
+			$data['author'] = $this->authors_model->get_author_by_id($id);
 			$this->load->view('templates/header');
-			$this->load->view('admin/authors/new_author');
+			$this->load->view('admin/authors/edit_author', $data);
 			$this->load->view('templates/footer');
 		}else{
 			if (!empty($_FILES['author_image']['name'])) {

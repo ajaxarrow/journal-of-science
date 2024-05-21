@@ -60,10 +60,10 @@ class Volume extends CI_Controller {
 		$this->form_validation->set_rules('vol_desc', 'Volume Description', 'required');
 
 		if($this->form_validation->run() == FALSE){
-				// If validation fails, reload the edit form with errors
-				$this->load->view('templates/header');
-				$this->load->view('admin/volumes/edit_volume');
-				$this->load->view('templates/footer');
+			$data['volume'] = $this->volume_model->get_volume_by_id($id);
+			$this->load->view('templates/header');
+			$this->load->view('admin/volumes/edit_volume', $data);
+			$this->load->view('templates/footer');
 		} else {
 				// If validation passes, update volume in database
 				$data = array (

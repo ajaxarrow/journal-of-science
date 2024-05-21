@@ -7,13 +7,30 @@ class Volume_model extends CI_Model{
         $this->db->like('vol_name', $query);
         $this->db->or_like('vol_description', $query);
     }
-
+		
 		$this->db->order_by('vol_name', 'ASC');
     $query = $this->db->get('volume');
     $volumes = $query->result_array();
 
     return $volumes;
 }
+
+public function fetch_published_volume($query = NULL) {
+	if (!is_null($query)) {
+		$this->db->order_by('vol_name', 'ASC');
+			$this->db->like('vol_name', $query);
+			$this->db->or_like('vol_description', $query);
+	}
+	
+	$this->db->where('published', 1);
+	$this->db->where('archived', 0);
+	$this->db->order_by('vol_name', 'ASC');
+	$query = $this->db->get('volume');
+	$volumes = $query->result_array();
+
+	return $volumes;
+}
+
 
 
 	public function get_volume() {

@@ -22,7 +22,7 @@ $this->load->view('./components/admin/admin-topbar.php', $data);
                 <textarea id="editor1" name="vol_desc" class="w-full h-[45px]" type="text" placeholder="Provide volume description">
 				<?php echo set_value('vol_desc'); ?>
 				</textarea>
-                <?php echo form_error('vol_description', '<div class="error">', '</div>'); ?> <!-- Display keywords validation error -->
+                <?php echo form_error('vol_desc', '<div class="error">', '</div>'); ?> <!-- Display keywords validation error -->
             </div>
             <div class="my-4 flex items-center gap-2">
                 <input name="published" class="w-[25px] h-[25px]" type="checkbox" <?php echo set_checkbox('published', '1'); ?> />
@@ -30,7 +30,7 @@ $this->load->view('./components/admin/admin-topbar.php', $data);
                 <?php echo form_error('published', '<div class="error">', '</div>'); ?> <!-- Display published validation error -->
             </div>
 						<div class="my-4 flex items-center gap-2">
-                <input name="archived" class="w-[25px] h-[25px]" type="checkbox" <?php echo set_checkbox('published', '1'); ?> />
+                <input name="archived" class="w-[25px] h-[25px]" type="checkbox" <?php echo set_checkbox('archived', '1'); ?> />
                 <label class="font-medium">Archived</label>
                 <?php echo form_error('archived', '<div class="error">', '</div>'); ?> <!-- Display published validation error -->
             </div>
