@@ -15,6 +15,7 @@ class Volume_model extends CI_Model{
     return $volumes;
 }
 
+
 public function fetch_published_volume($query = NULL) {
 	if (!is_null($query)) {
 		$this->db->order_by('vol_name', 'ASC');

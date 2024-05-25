@@ -30,8 +30,16 @@ class Articles_model extends CI_Model{
 	}
 
 	public function get_article_by_id($id){
+		//mao ni sa pagkuha nako ug article by id
 		$article = $this->db->get_where('articles', array('article_id' => $id))->row_array();
+
+		//gitawag dayon nako ni nga function, mukuha ko ani sa article_author nga tavle kay didto ang ->
+		//pag assign sa article sa author kaya many to many man sila
+		//so ang naa ra didto kay ang article id ug ang auth id, maong gibutang nako sa variable
+		//tas akong giloop diris ubos para kuhaon nako ang data sa mga nakuha nako nga auth id
+		//tas akong ibutang sa article['authors'] nga array
 		$articleauthors = $this->volume_model->get_authors_by_article_id($article['article_id']);
+
 			$article['authors'] = [];
 			foreach ($articleauthors as &$author) {
 					$article['authors'][] =  $this->volume_model->get_authors_by_id($author['authid']);
